@@ -11,7 +11,7 @@ $edit = function () {
     return redirect()->route('articles.edit', $this->article);
 };
 
-// 戻るページにリダイレクト
+// 一覧ページにリダイレクト
 $back = function () {
     return redirect()->route('articles.index');
 };
