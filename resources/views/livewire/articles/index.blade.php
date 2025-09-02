@@ -1,15 +1,19 @@
 <?php
 
 use function Livewire\Volt\{state};
-use \App\Models\Article;
+use App\Models\Article;
 
 // ルートモデルバインディング
 state(['articles' => fn() => Article::all()]);
 
+$create = function() {
+    return redirect()->route('article.create');
+};
+
 ?>
 
 <div>
-    <h1>タイトル</h1>
+    <h1>論文一覧</h1>
     <ul>
         @foreach ($articles as $article)
             <li>
@@ -17,4 +21,5 @@ state(['articles' => fn() => Article::all()]);
             </li>
         @endforeach
     </ul>
+    <button wire:click="create">新規論文投稿</button>
 </div>
