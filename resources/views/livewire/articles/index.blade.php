@@ -7,8 +7,8 @@ use App\Models\Article;
 state(['articles' => fn() => Article::all()]);
 
 $create = function() {
-    return redirect()->route('article.create');
-};
+    return redirect()->route('articles.create');
+}
 
 ?>
 
